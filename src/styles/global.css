@@ -1,3 +1,13 @@
+html.dark {
+  background-color: #22213b;
+  color: #fff;
+}
+
+.dark a {
+  color: #e7e9f0;
+}
+
+
 html {
     background-color: #f1f5f9;
     font-family: sans-serif;
@@ -62,7 +72,7 @@ a {
   .nav-links a {
     display: block;
     text-align: center;
-    padding: 10px 0;
+    padding: 8px 0;
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: bold;
@@ -72,6 +82,7 @@ a {
   .nav-links a:hover,
   .nav-links a:focus {
     background-color: #ff9776;
+    border-radius: 10px;
   }
   
   .expanded {

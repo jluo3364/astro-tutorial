@@ -4,26 +4,24 @@ import BaseLayout from "../layouts/BaseLayout.astro";import Footer from "../comp
 const pageTitle = "About Me";
 const identity = {
   firstName: "Jessica",
-  country: "US",
+  country: "the U.S.",
   occupation: "Student",
   hobbies: ["running", "watching anime", "cooking"],
 };
 
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
-const happy = true;
-const finished = false;
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Python", "Java"];
+const finished = true;
 const goal = 3;
-const skillColor = "navy";
+
 const fontWeight = "bold";
 const textCase = "uppercase";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
     <style
-      define:vars={{ skillColor, fontWeight, textCase }}
+      define:vars={{ fontWeight, textCase }}
     >
       .skill {
-        color: var(--skillColor);
         font-weight: var(--fontWeight);
         text-transform: var(--textCase);
         font-weight: bold;
@@ -36,15 +34,11 @@ const textCase = "uppercase";
     on my website, and it's the first one I built myself!
   </p>
 
-  <p>
-    This site will update as I complete more of the tutorial, so keep checking
-    back and see how my journey is going!
-  </p>
   <p>Here are a few facts about me:</p>
   <ul>
     <li>My name is {identity.firstName}.</li>
     <li>
-      I live in {identity.country} and I work as a {identity.occupation}.
+      I live in {identity.country} and I am a {identity.occupation}.
     </li>
     {
       identity.hobbies.length >= 2 && (
@@ -58,15 +52,11 @@ const textCase = "uppercase";
   <ul>
     {skills.map((skill) => <li class="skill">{skill}</li>)}
   </ul>
-  {happy && <p>I am happy to be learning Astro!</p>}
-
-  {finished && <p>I finished this tutorial!</p>}
-
   {
-    goal === 3 ? (
+    (goal === 3 && !finished) ? (
       <p>My goal is to finish in 3 days.</p>
     ) : (
-      <p>My goal is not 3 days.</p>
+      <p>I finished this tutorial!</p>
     )
   }</BaseLayout
 >
